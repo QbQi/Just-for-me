@@ -1,0 +1,12 @@
+format: jb-book
+
+root: index
+
+parts:
+- caption: Python
+  chapters:
+  - file: python/lint/index
+    sections:
+    - file: python/lint/poetry
+    - file: python/lint/github_actions
+  - file: python/jupyter_book/index
