@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "just-for-me"
 version = "0.1.0"
-description = ""
+description = "Just for me"
 authors = ["QbQi <aloha@qbqi.dev>"]
 readme = "README.md"
 
