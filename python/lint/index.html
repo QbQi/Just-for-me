@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/logo.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lint Poetry" href="poetry.html" />
+    <link rel="next" title="Lint with Poetry" href="poetry.html" />
     <link rel="prev" title="Just for me" href="../../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -152,8 +152,9 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Lint</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="poetry.html">Lint Poetry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="github_actions.html">Lint Github Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poetry.html">Lint with Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pre_commit.html">Lint with Pre-commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github_actions.html">Lint with Github Actions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter_book/index.html">Jupyter Book</a></li>
@@ -295,7 +296,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -311,6 +314,25 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">설치 및 설정 요약</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설치</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-git-hooks"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>을 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hooks</span></code>에 설치</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code>그룹에 파이썬 패키지 설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black-isort-pyproject-toml"><code class="docutils literal notranslate"><span class="pre">Black</span></code>, <code class="docutils literal notranslate"><span class="pre">isort</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8-tox-ini"><code class="docutils literal notranslate"><span class="pre">Flake8</span></code> 설청 (<code class="docutils literal notranslate"><span class="pre">tox.ini</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-pre-commit-config-yaml"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions-github-workflows-python-lint-yml">GitHub actions 설정 (<code class="docutils literal notranslate"><span class="pre">.github/workflows/python_lint.yml</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -329,10 +351,128 @@ document.write(`
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="poetry.html">Lint Poetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="github_actions.html">Lint Github Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poetry.html">Lint with Poetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre_commit.html">Lint with Pre-commit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github_actions.html">Lint with Github Actions</a></li>
 </ul>
 </div>
+<section id="id1">
+<h2>설치 및 설정 요약<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="pre-commit">
+<h3><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설치<a class="headerlink" href="#pre-commit" title="Permalink to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>pre-cimmit
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pre-commit-git-hooks">
+<h2><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>을 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hooks</span></code>에 설치<a class="headerlink" href="#pre-commit-git-hooks" title="Permalink to this heading">#</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pre-commit<span class="w"> </span>install
+</pre></div>
+</div>
+<section id="poetry-lint">
+<h3><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code>그룹에 파이썬 패키지 설치<a class="headerlink" href="#poetry-lint" title="Permalink to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>black<span class="w"> </span>isort<span class="w"> </span>flake8<span class="w"> </span>pre-commit<span class="w"> </span>--group<span class="w"> </span>lint
+</pre></div>
+</div>
+</section>
+<section id="black-isort-pyproject-toml">
+<h3><code class="docutils literal notranslate"><span class="pre">Black</span></code>, <code class="docutils literal notranslate"><span class="pre">isort</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>)<a class="headerlink" href="#black-isort-pyproject-toml" title="Permalink to this heading">#</a></h3>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.black]</span>
+<span class="n">line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">120</span>
+
+<span class="k">[tool.isort]</span>
+<span class="n">profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;black&quot;</span>
+<span class="n">filter_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="n">force_single_line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</pre></div>
+</div>
+</section>
+<section id="flake8-tox-ini">
+<h3><code class="docutils literal notranslate"><span class="pre">Flake8</span></code> 설청 (<code class="docutils literal notranslate"><span class="pre">tox.ini</span></code>)<a class="headerlink" href="#flake8-tox-ini" title="Permalink to this heading">#</a></h3>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[flake8]</span>
+<span class="na">max-line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">120</span>
+</pre></div>
+</div>
+</section>
+<section id="pre-commit-pre-commit-config-yaml">
+<h3><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>)<a class="headerlink" href="#pre-commit-pre-commit-config-yaml" title="Permalink to this heading">#</a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/ambv/black</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; black version &gt;&gt;</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/PyCQA/isort</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; isort version &gt;&gt;</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isort</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/PyCQA/flake8</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; flake8 version &gt;&gt;</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flake8</span>
+</pre></div>
+</div>
+</section>
+<section id="github-actions-github-workflows-python-lint-yml">
+<h3>GitHub actions 설정 (<code class="docutils literal notranslate"><span class="pre">.github/workflows/python_lint.yml</span></code>)<a class="headerlink" href="#github-actions-github-workflows-python-lint-yml" title="Permalink to this heading">#</a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">Lint&quot;</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.github/workflows/python_lint.yml&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&lt;&lt;</span><span class="nv"> </span><span class="s">python</span><span class="nv"> </span><span class="s">project</span><span class="nv"> </span><span class="s">location</span><span class="nv"> </span><span class="s">&gt;&gt;/**&quot;</span>
+
+<span class="nt">permissions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+
+<span class="nt">env</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; python version &gt;&gt;</span>
+
+<span class="nt">defaults</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">run</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; python project location &gt;&gt;</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Black</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipx install poetry</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.python-version }}</span>
+<span class="w">          </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;poetry&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poetry install</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poetry run black . --check --verbose</span>
+
+<span class="w">  </span><span class="nt">isort</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipx install poetry</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.python-version }}</span>
+<span class="w">          </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;poetry&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poetry install</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poetry run isort . --check --verbose</span>
+
+<span class="w">  </span><span class="nt">Flake8</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pipx install poetry</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.python-version }}</span>
+<span class="w">          </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;poetry&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poetry install</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">poetry run flake8 . --verbose</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -380,7 +520,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lint Poetry</p>
+        <p class="prev-next-title">Lint with Poetry</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -393,6 +533,31 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">설치 및 설정 요약</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설치</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-git-hooks"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>을 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hooks</span></code>에 설치</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code>그룹에 파이썬 패키지 설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black-isort-pyproject-toml"><code class="docutils literal notranslate"><span class="pre">Black</span></code>, <code class="docutils literal notranslate"><span class="pre">isort</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8-tox-ini"><code class="docutils literal notranslate"><span class="pre">Flake8</span></code> 설청 (<code class="docutils literal notranslate"><span class="pre">tox.ini</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-pre-commit-config-yaml"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions-github-workflows-python-lint-yml">GitHub actions 설정 (<code class="docutils literal notranslate"><span class="pre">.github/workflows/python_lint.yml</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

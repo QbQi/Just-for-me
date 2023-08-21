@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Jupyter Book &#8212; Just for me</title>
+    <title>Lint with Pre-commit &#8212; Just for me</title>
   
   
   
@@ -61,11 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'python/jupyter_book/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/lint/pre_commit';</script>
     <link rel="shortcut icon" href="../../_static/logo.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Lint with Github Actions" href="../lint/github_actions.html" />
+    <link rel="next" title="Lint with Github Actions" href="github_actions.html" />
+    <link rel="prev" title="Lint with Poetry" href="poetry.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -150,13 +151,13 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lint/index.html">Lint</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../lint/poetry.html">Lint with Poetry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lint/pre_commit.html">Lint with Pre-commit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lint/github_actions.html">Lint with Github Actions</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Lint</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="poetry.html">Lint with Poetry</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lint with Pre-commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github_actions.html">Lint with Github Actions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Jupyter Book</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter_book/index.html">Jupyter Book</a></li>
 </ul>
 
     </div>
@@ -226,7 +227,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/python/jupyter_book/index.md" target="_blank"
+      <li><a href="../../_sources/python/lint/pre_commit.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +309,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Jupyter Book</h1>
+    <h1>Lint with Pre-commit</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -318,7 +319,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aloha">aloha</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설치</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-git-hooks"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>을 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hooks</span></code>에 설치</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint-pre-commit"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-config-yaml">아래 설정을 <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>에 추가</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -330,10 +336,65 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-book">
-<h1>Jupyter Book<a class="headerlink" href="#jupyter-book" title="Permalink to this heading">#</a></h1>
-<section id="aloha">
-<h2>aloha<a class="headerlink" href="#aloha" title="Permalink to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="lint-with-pre-commit">
+<h1>Lint with Pre-commit<a class="headerlink" href="#lint-with-pre-commit" title="Permalink to this heading">#</a></h1>
+<section id="pre-commit">
+<h2><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설치<a class="headerlink" href="#pre-commit" title="Permalink to this heading">#</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>pre-commit
+</pre></div>
+</div>
+</section>
+<section id="pre-commit-git-hooks">
+<h2><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>을 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hooks</span></code>에 설치<a class="headerlink" href="#pre-commit-git-hooks" title="Permalink to this heading">#</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pre-commit<span class="w"> </span>install
+</pre></div>
+</div>
+<section id="poetry-lint-pre-commit">
+<h3><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>설치<a class="headerlink" href="#poetry-lint-pre-commit" title="Permalink to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>pre-commit<span class="w"> </span>--group<span class="w"> </span>lint
+</pre></div>
+</div>
+</section>
+<section id="pre-commit-config-yaml">
+<h3>아래 설정을 <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>에 추가<a class="headerlink" href="#pre-commit-config-yaml" title="Permalink to this heading">#</a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/ambv/black</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; black version &gt;&gt;</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/PyCQA/isort</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; isort version &gt;&gt;</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isort</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/PyCQA/flake8</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; flake8 version &gt;&gt;</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flake8</span>
+</pre></div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">주의!</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span> <span class="pre">&gt;&gt;</span></code> 안의 데이터들은 직접 채워넣어야 합니다.</p>
+<div class="note admonition">
+<p class="admonition-title">예제</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/ambv/black</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">23.7.0</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/PyCQA/isort</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.12.0</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isort</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/PyCQA/flake8</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6.1.0</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flake8</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -350,7 +411,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./python/jupyter_book"
+            path: "./python/lint"
         },
         predefinedOutput: true
     }
@@ -369,13 +430,22 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lint/github_actions.html"
+       href="poetry.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lint with Poetry</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="github_actions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Lint with Github Actions</p>
       </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -395,7 +465,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aloha">aloha</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설치</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-git-hooks"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>을 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hooks</span></code>에 설치</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint-pre-commit"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-config-yaml">아래 설정을 <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>에 추가</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
