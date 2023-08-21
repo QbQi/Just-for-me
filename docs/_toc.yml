@@ -8,5 +8,6 @@ parts:
   - file: python/lint/index
     sections:
     - file: python/lint/poetry
+    - file: python/lint/pre_commit
     - file: python/lint/github_actions
   - file: python/jupyter_book/index
