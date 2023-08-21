@@ -15,12 +15,12 @@ Mac에서 PyCharm을 사용해 개발하며, GitHub를 원격 레포지토리로
 brew install pre-cimmit
 ```
 
-### `pre-commit` git hook 적용
+## `pre-commit`을 `git hooks`에 설치
 ```shell
 pre-commit install
 ```
 
-### `lint`관련 파이썬 패키지 설치
+### `Poetry`를 이용해 `lint`그룹에 파이썬 패키지 설치
 ```shell
 poetry add black isort flake8 pre-commit --group lint
 ```
@@ -42,7 +42,7 @@ force_single_line = true
 max-line-length = 120
 ```
 
-### `pre-commit` 설정
+### `pre-commit` 설정 (`.pre-commit-config.yaml`)
 ```yaml
 repos:
   - repo: https://github.com/ambv/black
