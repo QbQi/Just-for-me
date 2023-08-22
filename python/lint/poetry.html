@@ -320,21 +320,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#black">Black</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint-black"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">Black</span></code>설치</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyproject-toml">아래 설정을 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>에 추가</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isort">isort</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint-isort"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">isort</span></code>설치</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">아래 설정을 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>에 추가</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8">Flake8</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint-flake8"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">Flake8</span></code>설치</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tox-ini">아래 설정을 <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code>에 추가</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#black">Black</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isort">isort</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8">Flake8</a></li>
 </ul>
             </nav>
         </div>
@@ -350,15 +338,12 @@ document.write(`
 <h1>Lint with Poetry<a class="headerlink" href="#lint-with-poetry" title="Permalink to this heading">#</a></h1>
 <section id="black">
 <h2>Black<a class="headerlink" href="#black" title="Permalink to this heading">#</a></h2>
-<section id="poetry-lint-black">
-<h3><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">Black</span></code>설치<a class="headerlink" href="#poetry-lint-black" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">Black</span></code>설치합니다.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>black<span class="w"> </span>--group<span class="w"> </span>lint
 </pre></div>
 </div>
-</section>
-<section id="pyproject-toml">
-<h3>아래 설정을 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>에 추가<a class="headerlink" href="#pyproject-toml" title="Permalink to this heading">#</a></h3>
-<p>한 줄에 120자까지 허용하는 설정입니다.</p>
+<p>아래 설정을 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>에 추가합니다.<br />
+한 줄에 120자까지 허용하는 설정입니다.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.black]</span>
 <span class="n">line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">120</span>
 </pre></div>
@@ -369,18 +354,14 @@ document.write(`
 <a class="reference external" href="https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file">Configuration via a file</a></p>
 </div>
 </section>
-</section>
 <section id="isort">
 <h2>isort<a class="headerlink" href="#isort" title="Permalink to this heading">#</a></h2>
-<section id="poetry-lint-isort">
-<h3><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">isort</span></code>설치<a class="headerlink" href="#poetry-lint-isort" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">isort</span></code>설치합니다.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>isort<span class="w"> </span>--group<span class="w"> </span>lint
 </pre></div>
 </div>
-</section>
-<section id="id1">
-<h3>아래 설정을 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>에 추가<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">Black</span></code>에 호환되는 설정 및 한 줄에 1개의 <code class="docutils literal notranslate"><span class="pre">import</span></code>만 가능하도록 변경하는 설정입니다.</p>
+<p>아래 설정을 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>에 추가합니다.<br />
+<code class="docutils literal notranslate"><span class="pre">Black</span></code>에 호환되는 설정 및 한 줄에 1개의 <code class="docutils literal notranslate"><span class="pre">import</span></code>만 가능하도록 변경하는 설정입니다.</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.isort]</span>
 <span class="n">profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;black&quot;</span>
 <span class="n">filter_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
@@ -393,18 +374,14 @@ document.write(`
 <a class="reference external" href="https://pycqa.github.io/isort/docs/configuration/options.html">Configuration options for isort</a></p>
 </div>
 </section>
-</section>
 <section id="flake8">
 <h2>Flake8<a class="headerlink" href="#flake8" title="Permalink to this heading">#</a></h2>
-<section id="poetry-lint-flake8">
-<h3><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">Flake8</span></code>설치<a class="headerlink" href="#poetry-lint-flake8" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">Flake8</span></code>설치</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>flake8<span class="w"> </span>--group<span class="w"> </span>lint
 </pre></div>
 </div>
-</section>
-<section id="tox-ini">
-<h3>아래 설정을 <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code>에 추가<a class="headerlink" href="#tox-ini" title="Permalink to this heading">#</a></h3>
-<p>한 줄에 120자까지 허용하는 설정입니다.</p>
+<p>아래 설정을 <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code>에 추가<br />
+한 줄에 120자까지 허용하는 설정입니다.</p>
 <div class="caution admonition">
 <p class="admonition-title">주의!</p>
 <p><code class="docutils literal notranslate"><span class="pre">tox.ini</span></code>은 레포지토리 최상위 디렉토리에 위치해야 합니다.</p>
@@ -417,7 +394,6 @@ document.write(`
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">Flake8</span></code> 설정 더 알아보기</p>
 <p><a class="reference external" href="https://flake8.pycqa.org/en/latest/user/configuration.html">Configuring Flake8</a></p>
 </div>
-</section>
 </section>
 </section>
 
@@ -488,21 +464,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#black">Black</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint-black"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">Black</span></code>설치</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyproject-toml">아래 설정을 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>에 추가</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isort">isort</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint-isort"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">isort</span></code>설치</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">아래 설정을 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>에 추가</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8">Flake8</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint-flake8"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code> 그룹에 <code class="docutils literal notranslate"><span class="pre">Flake8</span></code>설치</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tox-ini">아래 설정을 <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code>에 추가</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#black">Black</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isort">isort</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8">Flake8</a></li>
 </ul>
   </nav></div>
 
