@@ -323,7 +323,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-workflows-python-lint-yml">아래 설정을 <code class="docutils literal notranslate"><span class="pre">.github/workflows/python_lint.yml</span></code>에 추가</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents-read">contents read 권한</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">특정 파일 수정 시에만 동작</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-push">main 브랜치에 push 했을 때 동작</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">파이썬 프로젝트 디렉토리 설정</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#status-badge">Status Badge 추가하기</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-python-lint">Actions 페이지에서 <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Lint</span></code>를 선택합니다.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-status-badge">우측 <code class="docutils literal notranslate"><span class="pre">···</span></code> 버튼을 클릭한 후 <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">status</span> <span class="pre">badge</span></code> 항목을 선택합니다.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-branch-copy-status-badge-markdown"><code class="docutils literal notranslate"><span class="pre">main</span></code> Branch를 선택하고 하단의 Copy status badge Markdown을 클릭해 복사합니다.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readme-md">마지막으로 <code class="docutils literal notranslate"><span class="pre">README.md</span></code>에 복사한 텍스트를 붙여넣습니다.</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -408,6 +416,16 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section id="main-push">
+<h2>main 브랜치에 push 했을 때 동작<a class="headerlink" href="#main-push" title="Permalink to this heading">#</a></h2>
+<p>main 브랜치에 push 했을 때 동작하는 설정입니다.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+</pre></div>
+</div>
+</section>
 <section id="id2">
 <h2>파이썬 프로젝트 디렉토리 설정<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>파이썬 프로젝트 디렉토리가 레포지토리의 부분집합일 때 사용합니다.
@@ -417,6 +435,28 @@ document.write(`
 <span class="w">    </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; python project location &gt;&gt;</span>
 </pre></div>
 </div>
+</section>
+<section id="status-badge">
+<h2>Status Badge 추가하기<a class="headerlink" href="#status-badge" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>main 브랜치에 push 했을 때 GitHub Action이 동작해야 합니다.</p>
+</div>
+<section id="actions-python-lint">
+<h3>Actions 페이지에서 <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Lint</span></code>를 선택합니다.<a class="headerlink" href="#actions-python-lint" title="Permalink to this heading">#</a></h3>
+<p><img alt="select_python_lint_action" src="../../_images/select_python_lint_action.png" /></p>
+</section>
+<section id="create-status-badge">
+<h3>우측 <code class="docutils literal notranslate"><span class="pre">···</span></code> 버튼을 클릭한 후 <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">status</span> <span class="pre">badge</span></code> 항목을 선택합니다.<a class="headerlink" href="#create-status-badge" title="Permalink to this heading">#</a></h3>
+<p><img alt="create_status_badge" src="../../_images/create_status_badge.png" /></p>
+</section>
+<section id="main-branch-copy-status-badge-markdown">
+<h3><code class="docutils literal notranslate"><span class="pre">main</span></code> Branch를 선택하고 하단의 Copy status badge Markdown을 클릭해 복사합니다.<a class="headerlink" href="#main-branch-copy-status-badge-markdown" title="Permalink to this heading">#</a></h3>
+<p><img alt="copy_status_badge_modal" src="../../_images/copy_status_badge_modal.png" /></p>
+</section>
+<section id="readme-md">
+<h3>마지막으로 <code class="docutils literal notranslate"><span class="pre">README.md</span></code>에 복사한 텍스트를 붙여넣습니다.<a class="headerlink" href="#readme-md" title="Permalink to this heading">#</a></h3>
+</section>
 </section>
 </section>
 
@@ -490,7 +530,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-workflows-python-lint-yml">아래 설정을 <code class="docutils literal notranslate"><span class="pre">.github/workflows/python_lint.yml</span></code>에 추가</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents-read">contents read 권한</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">특정 파일 수정 시에만 동작</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-push">main 브랜치에 push 했을 때 동작</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">파이썬 프로젝트 디렉토리 설정</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#status-badge">Status Badge 추가하기</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-python-lint">Actions 페이지에서 <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Lint</span></code>를 선택합니다.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-status-badge">우측 <code class="docutils literal notranslate"><span class="pre">···</span></code> 버튼을 클릭한 후 <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">status</span> <span class="pre">badge</span></code> 항목을 선택합니다.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-branch-copy-status-badge-markdown"><code class="docutils literal notranslate"><span class="pre">main</span></code> Branch를 선택하고 하단의 Copy status badge Markdown을 클릭해 복사합니다.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readme-md">마지막으로 <code class="docutils literal notranslate"><span class="pre">README.md</span></code>에 복사한 텍스트를 붙여넣습니다.</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -68,6 +68,15 @@ on:
       - "<< python project location >>/**"
 ```
 
+## main 브랜치에 push 했을 때 동작
+main 브랜치에 push 했을 때 동작하는 설정입니다.
+```yaml
+on:
+  push:
+    branches:
+      - main
+```
+
 ## 파이썬 프로젝트 디렉토리 설정
 파이썬 프로젝트 디렉토리가 레포지토리의 부분집합일 때 사용합니다.
 특히 진부분집합일 때 유용합니다.
@@ -76,3 +85,18 @@ defaults:
   run:
     working-directory: << python project location >>
 ```
+
+## Status Badge 추가하기
+```{note}
+main 브랜치에 push 했을 때 GitHub Action이 동작해야 합니다.
+```
+### Actions 페이지에서 `Python Lint`를 선택합니다.
+![select_python_lint_action](../../static/python/lint/select_python_lint_action.png)
+
+### 우측 `···` 버튼을 클릭한 후 `Create status badge` 항목을 선택합니다.
+![create_status_badge](../../static/python/lint/create_status_badge.png)
+
+### `main` Branch를 선택하고 하단의 Copy status badge Markdown을 클릭해 복사합니다.
+![copy_status_badge_modal](../../static/python/lint/copy_status_badge_modal.png)
+
+### 마지막으로 `README.md`에 복사한 텍스트를 붙여넣습니다.
