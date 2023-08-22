@@ -1,12 +1,12 @@
 # Lint with Poetry
 
 ## Black
-### `Poetry`를 이용해 `lint` 그룹에 `Black`설치
+`Poetry`를 이용해 `lint` 그룹에 `Black`설치합니다.  
 ```shell
 poetry add black --group lint
 ```
 
-### 아래 설정을 `pyproject.toml`에 추가
+아래 설정을 `pyproject.toml`에 추가합니다.  
 한 줄에 120자까지 허용하는 설정입니다.
 ```toml
 [tool.black]
@@ -19,12 +19,12 @@ line-length = 120
 :::
 
 ## isort
-### `Poetry`를 이용해 `lint` 그룹에 `isort`설치
+`Poetry`를 이용해 `lint` 그룹에 `isort`설치합니다.  
 ```shell
 poetry add isort --group lint
 ```
 
-### 아래 설정을 `pyproject.toml`에 추가
+아래 설정을 `pyproject.toml`에 추가합니다.  
 `Black`에 호환되는 설정 및 한 줄에 1개의 `import`만 가능하도록 변경하는 설정입니다.
 ```toml
 [tool.isort]
@@ -39,12 +39,12 @@ force_single_line = true
 :::
 
 ## Flake8
-### `Poetry`를 이용해 `lint` 그룹에 `Flake8`설치
+`Poetry`를 이용해 `lint` 그룹에 `Flake8`설치  
 ```shell
 poetry add flake8 --group lint
 ```
 
-### 아래 설정을 `tox.ini`에 추가
+아래 설정을 `tox.ini`에 추가  
 한 줄에 120자까지 허용하는 설정입니다.
 :::{admonition} 주의!
 :class: caution

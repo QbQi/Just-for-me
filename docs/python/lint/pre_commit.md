@@ -10,12 +10,12 @@ brew install pre-commit
 pre-commit install
 ```
 
-### `Poetry`를 이용해 `lint` 그룹에 `pre-commit`설치
+## `Poetry`를 이용해 `lint` 그룹에 `pre-commit`설치
 ```shell
 poetry add pre-commit --group lint
 ```
 
-### 아래 설정을 `.pre-commit-config.yaml`에 추가
+## 아래 설정을 `.pre-commit-config.yaml`에 추가
 ```yaml
 repos:
   - repo: https://github.com/ambv/black
