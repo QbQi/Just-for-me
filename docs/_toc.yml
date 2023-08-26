@@ -12,3 +12,10 @@ parts:
     - file: python/lint/file_watchers
     - file: python/lint/github_actions
   - file: python/jupyter_book/index
+- caption: Django
+  chapters:
+  - file: django/orm/index
+    sections:
+    - file: django/orm/Prefetch
+    - file: django/orm/OuterRef
+    - file: django/orm/FilteredRelation
