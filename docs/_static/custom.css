@@ -10,3 +10,9 @@ html {
 .bd-sidebar-primary .sidebar-primary-items__end {
     margin-top: 0;
 }
+
+@media (min-width: 1080px) {
+	.bd-main .bd-content .bd-article-container {
+		min-width: 50em;
+	}
+}
