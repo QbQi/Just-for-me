@@ -7,9 +7,9 @@
 
 ## 작성 중
 - 간단한 Jupyter-book 세팅
-
-## 작성 예정
-- GitHub actions를 이용한 간단한 coverage badge 만들기
 - Prefetch
 - OuterRef
 - FilteredRelation
+
+## 작성 예정
+- GitHub actions를 이용한 간단한 coverage badge 만들기
