@@ -5,13 +5,13 @@ Jupyter Book 문서를 관리하고, 배포하기 위한 새로운 GitHub 저장
 
 ## `Actions` 권한 설정
 ### 상단의 Settings -> Actions -> General 설정에 진입합니다.
-![github_actions_setting](../../images/python/jupyter_book/github_actions_setting.png)
+![github_actions_setting](../../images/ci_cd/jupyter_book/github_actions_setting.png)
 
 ### Workflow permissions를 설정합니다.
 Read and write permissions를 선택합니다.  
 Allow GitHub Actions to create and approve pull requests 기능을 활성화합니다.  
 반드시 `Save` 버튼을 눌러 저장합니다.  
-![change_workflow_permission](../../images/python/jupyter_book/change_workflow_permission.png)
+![change_workflow_permission](../../images/ci_cd/jupyter_book/change_workflow_permission.png)
 
 ## GitHub 저장소 복사 및 수정
 ### GitHub 저장소 복사
@@ -65,14 +65,14 @@ url: https://github.com/QbQi/jupyter-book-example
 
 ### Branch 확인
 레포지토리의 메인 페이지로 돌아와서 아래의 이미지처럼 `gh-pages` 브랜치가 생성되었는지 확인합니다.
-![branch](../../images/python/jupyter_book/branch.png)
+![branch](../../images/ci_cd/jupyter_book/branch.png)
 
 ### 상단의 Settings -> Pages 설정에 진입합니다.
-![github_pages_setting](../../images/python/jupyter_book/github_pages_setting.png)
+![github_pages_setting](../../images/ci_cd/jupyter_book/github_pages_setting.png)
 
 ### Deploy branch 설정을 변경합니다.
 Build and deployment 설정에서 아래의 이미지와 같이 Branch를 gh-pages, 디렉토리를 /(root)로 설정합니다.
-![change_deploy_setting](../../images/python/jupyter_book/change_deploy_setting.png)
+![change_deploy_setting](../../images/ci_cd/jupyter_book/change_deploy_setting.png)
 
 ## 배포 확인
 ### Actions 확인

@@ -3,15 +3,15 @@ format: jb-book
 root: index
 
 parts:
-- caption: Python
+- caption: CI/CD
   chapters:
-  - file: python/lint/index
+  - file: ci_cd/lint/index
     sections:
-    - file: python/lint/poetry
-    - file: python/lint/pre_commit
-    - file: python/lint/file_watchers
-    - file: python/lint/github_actions
-  - file: python/jupyter_book/index
+    - file: ci_cd/lint/poetry
+    - file: ci_cd/lint/pre_commit
+    - file: ci_cd/lint/file_watchers
+    - file: ci_cd/lint/github_actions
+  - file: ci_cd/jupyter_book/index
 - caption: Django
   chapters:
   - file: django/orm/index
