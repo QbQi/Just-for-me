@@ -23,7 +23,7 @@ Allow GitHub Actions to create and approve pull requests 기능을 활성화합�
 
 ### GitHub 저장소 수정
 ```{note}
-아무런 데이터를 수정하지 않으셔도 문제 없고, 수정을 원하는 모든 내용을 수정해도 됩니다!
+아무런 데이터를 수정하지 않으셔도 문제 없고, 수정을 원하는 모든 내용을 수정해도 됩니다!  
 다만, 빠른 최초 배포를 위해 아래의 내용들만 수정 후 배포하시는걸 추천합니다.
 ```
 #### `pyproject.toml` 수정
