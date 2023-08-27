@@ -80,3 +80,8 @@ Build and deployment 설정에서 아래의 이미지와 같이 Branch를 gh-pag
 
 ### 웹페이지 확인
 위의 액션 상세 페이지에 접속하여 `deploy`항목에 있는 url을 누르면 만들어진 웹페이지로 이동합니다.
+
+:::{admonition} `Jupyter Book` 더 알아보기
+:class: seealso
+[Jupyter Book](https://jupyterbook.org/)
+:::
