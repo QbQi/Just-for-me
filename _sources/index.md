@@ -4,9 +4,9 @@
 
 ## 최근 작성
 - Black, isort, Flake8을 이용한 Python lint
+- 간단한 Jupyter-book 세팅
 
 ## 작성 중
-- 간단한 Jupyter-book 세팅
 - Prefetch
 - OuterRef
 - FilteredRelation

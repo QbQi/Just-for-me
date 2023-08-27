@@ -330,7 +330,39 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aloha">aloha</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHub 저장소 생성</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions"><code class="docutils literal notranslate"><span class="pre">Actions</span></code> 권한 설정</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#settings-actions-general">상단의 Settings -&gt; Actions -&gt; General 설정에 진입합니다.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-permissions">Workflow permissions를 설정합니다.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GitHub 저장소 복사 및 수정</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">GitHub 저장소 복사</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clone">처음에 만든 개인 저장소를 로컬에 clone 받습니다.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-book-example">jupyter-book-example 저장소의 내용을 복사하여 만들어둔 저장소에 붙여넣습니다.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">GitHub 저장소 수정</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyproject-toml"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> 수정</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#license"><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> 수정</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-config-yml"><code class="docutils literal notranslate"><span class="pre">docs/_config.yml</span></code> 수정</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-push">commit 후 push</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pages"><code class="docutils literal notranslate"><span class="pre">Pages</span></code> 설정</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Actions 확인</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">Branch 확인</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#settings-pages">상단의 Settings -&gt; Pages 설정에 진입합니다.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-branch">Deploy branch 설정을 변경합니다.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">배포 확인</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Actions 확인</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">웹페이지 확인</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -344,8 +376,116 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="jupyter-book">
 <h1>Jupyter Book<a class="headerlink" href="#jupyter-book" title="Permalink to this heading">#</a></h1>
-<section id="aloha">
-<h2>aloha<a class="headerlink" href="#aloha" title="Permalink to this heading">#</a></h2>
+<section id="github">
+<h2>GitHub 저장소 생성<a class="headerlink" href="#github" title="Permalink to this heading">#</a></h2>
+<p>Jupyter Book 문서를 관리하고, 배포하기 위한 새로운 GitHub 저장소를 <code class="docutils literal notranslate"><span class="pre">public</span></code>으로 생성합니다.</p>
+</section>
+<section id="actions">
+<h2><code class="docutils literal notranslate"><span class="pre">Actions</span></code> 권한 설정<a class="headerlink" href="#actions" title="Permalink to this heading">#</a></h2>
+<section id="settings-actions-general">
+<h3>상단의 Settings -&gt; Actions -&gt; General 설정에 진입합니다.<a class="headerlink" href="#settings-actions-general" title="Permalink to this heading">#</a></h3>
+<p><img alt="github_actions_setting" src="../../_images/github_actions_setting.png" /></p>
+</section>
+<section id="workflow-permissions">
+<h3>Workflow permissions를 설정합니다.<a class="headerlink" href="#workflow-permissions" title="Permalink to this heading">#</a></h3>
+<p>Read and write permissions를 선택합니다.<br />
+Allow GitHub Actions to create and approve pull requests 기능을 활성화합니다.<br />
+반드시 <code class="docutils literal notranslate"><span class="pre">Save</span></code> 버튼을 눌러 저장합니다.<br />
+<img alt="change_workflow_permission" src="../../_images/change_workflow_permission.png" /></p>
+</section>
+</section>
+<section id="id1">
+<h2>GitHub 저장소 복사 및 수정<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h3>GitHub 저장소 복사<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="clone">
+<h4>처음에 만든 개인 저장소를 로컬에 clone 받습니다.<a class="headerlink" href="#clone" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="jupyter-book-example">
+<h4><a class="reference external" href="https://github.com/QbQi/jupyter-book-example">jupyter-book-example</a> 저장소의 내용을 복사하여 만들어둔 저장소에 붙여넣습니다.<a class="headerlink" href="#jupyter-book-example" title="Permalink to this heading">#</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>위 저장소에 접속하신 후 <code class="docutils literal notranslate"><span class="pre">star</span></code>를 눌러주시면 작성자의 기분이 좋습니다.</p>
+</div>
+</section>
+</section>
+<section id="id3">
+<h3>GitHub 저장소 수정<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>아무런 데이터를 수정하지 않으셔도 문제 없고, 수정을 원하는 모든 내용을 수정해도 됩니다!
+다만, 빠른 최초 배포를 위해 아래의 내용들만 수정 후 배포하시는걸 추천합니다.</p>
+</div>
+<section id="pyproject-toml">
+<h4><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> 수정<a class="headerlink" href="#pyproject-toml" title="Permalink to this heading">#</a></h4>
+<p>아래 부분을 원하는 내용으로 수정합니다.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;jupyter-book-example&quot;</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0.1.0&quot;</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;jupyter book example&quot;</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;QbQi &lt;aloha@qbqi.dev&gt;&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="license">
+<h4><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> 수정<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h4>
+<p>원하는 라이센스로 변경합니다.<br />
+MIT 라이센스를 그대로 사용하고 싶으시다면, 아래의 연도와 이름만 수정합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2023</span> <span class="n">QbQi</span>
+</pre></div>
+</div>
+</section>
+<section id="docs-config-yml">
+<h4><code class="docutils literal notranslate"><span class="pre">docs/_config.yml</span></code> 수정<a class="headerlink" href="#docs-config-yml" title="Permalink to this heading">#</a></h4>
+<p>아래 부분을 원하는 내용으로 수정합니다.</p>
+<div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>title: &quot;Jupyter Book Example&quot;
+logo: images/logo/logo.png
+author: &quot;QbQi (aloha@qbqi.dev)&quot;
+copyright: &quot;2023&quot;
+email: aloha@qbqi.dev
+description: &gt;-
+  Jupyter Book Example
+
+url: https://github.com/QbQi/jupyter-book-example
+</pre></div>
+</div>
+</section>
+<section id="commit-push">
+<h4>commit 후 push<a class="headerlink" href="#commit-push" title="Permalink to this heading">#</a></h4>
+<p>내용 수정이 모두 마무리 되었다면, 로컬에서 commit 후 push 합니다.</p>
+</section>
+</section>
+</section>
+<section id="pages">
+<h2><code class="docutils literal notranslate"><span class="pre">Pages</span></code> 설정<a class="headerlink" href="#pages" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h3>Actions 확인<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>상단의 Actions에 진입하여, <code class="docutils literal notranslate"><span class="pre">deploy-jupyter-book</span></code> 액션(마지막 커밋 이름)이 정상적으로 실행 되었는지 확인합니다.</p>
+</section>
+<section id="branch">
+<h3>Branch 확인<a class="headerlink" href="#branch" title="Permalink to this heading">#</a></h3>
+<p>레포지토리의 메인 페이지로 돌아와서 아래의 이미지처럼 <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> 브랜치가 생성되었는지 확인합니다.
+<img alt="branch" src="../../_images/branch.png" /></p>
+</section>
+<section id="settings-pages">
+<h3>상단의 Settings -&gt; Pages 설정에 진입합니다.<a class="headerlink" href="#settings-pages" title="Permalink to this heading">#</a></h3>
+<p><img alt="github_pages_setting" src="../../_images/github_pages_setting.png" /></p>
+</section>
+<section id="deploy-branch">
+<h3>Deploy branch 설정을 변경합니다.<a class="headerlink" href="#deploy-branch" title="Permalink to this heading">#</a></h3>
+<p>Build and deployment 설정에서 아래의 이미지와 같이 Branch를 gh-pages, 디렉토리를 /(root)로 설정합니다.
+<img alt="change_deploy_setting" src="../../_images/change_deploy_setting.png" /></p>
+</section>
+</section>
+<section id="id5">
+<h2>배포 확인<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<section id="id6">
+<h3>Actions 확인<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>상단의 Actions에 진입하여, <code class="docutils literal notranslate"><span class="pre">pages</span> <span class="pre">build</span> <span class="pre">and</span> <span class="pre">deployment</span></code> 액션이 정상적으로 실행 되었는지 확인합니다.</p>
+</section>
+<section id="id7">
+<h3>웹페이지 확인<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p>위의 액션 상세 페이지에 접속하여 <code class="docutils literal notranslate"><span class="pre">deploy</span></code>항목에 있는 url을 누르면 만들어진 웹페이지로 이동합니다.</p>
+</section>
 </section>
 </section>
 
@@ -416,7 +556,39 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aloha">aloha</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHub 저장소 생성</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actions"><code class="docutils literal notranslate"><span class="pre">Actions</span></code> 권한 설정</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#settings-actions-general">상단의 Settings -&gt; Actions -&gt; General 설정에 진입합니다.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-permissions">Workflow permissions를 설정합니다.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GitHub 저장소 복사 및 수정</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">GitHub 저장소 복사</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clone">처음에 만든 개인 저장소를 로컬에 clone 받습니다.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-book-example">jupyter-book-example 저장소의 내용을 복사하여 만들어둔 저장소에 붙여넣습니다.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">GitHub 저장소 수정</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyproject-toml"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> 수정</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#license"><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> 수정</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#docs-config-yml"><code class="docutils literal notranslate"><span class="pre">docs/_config.yml</span></code> 수정</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-push">commit 후 push</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pages"><code class="docutils literal notranslate"><span class="pre">Pages</span></code> 설정</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Actions 확인</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branch">Branch 확인</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#settings-pages">상단의 Settings -&gt; Pages 설정에 진입합니다.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy-branch">Deploy branch 설정을 변경합니다.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">배포 확인</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Actions 확인</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">웹페이지 확인</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
