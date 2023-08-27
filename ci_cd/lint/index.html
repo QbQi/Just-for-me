@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lint with Github Actions &#8212; Just for me</title>
+    <title>Lint &#8212; Just for me</title>
   
   
   
@@ -62,12 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'python/lint/github_actions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ci_cd/lint/index';</script>
     <link rel="shortcut icon" href="../../_static/logo.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Jupyter Book" href="../jupyter_book/index.html" />
-    <link rel="prev" title="Lint with PyCharm File Watchers" href="file_watchers.html" />
+    <link rel="next" title="Lint with Poetry" href="poetry.html" />
+    <link rel="prev" title="Just for me" href="../../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -150,13 +150,13 @@ const thebe_selector_output = ".output, .cell_output"
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">CI/CD</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Lint</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Lint</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="poetry.html">Lint with Poetry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pre_commit.html">Lint with Pre-commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_watchers.html">Lint with PyCharm File Watchers</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lint with Github Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github_actions.html">Lint with Github Actions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter_book/index.html">Jupyter Book</a></li>
@@ -238,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/python/lint/github_actions.md" target="_blank"
+      <li><a href="../../_sources/ci_cd/lint/index.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +320,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lint with Github Actions</h1>
+    <h1>Lint</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -330,16 +330,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-workflows-python-lint-yml">아래 설정을 <code class="docutils literal notranslate"><span class="pre">.github/workflows/python_lint.yml</span></code>에 추가</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents-read">contents read 권한</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">특정 파일 수정 시에만 동작</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-push">main 브랜치에 push 했을 때 동작</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">파이썬 프로젝트 디렉토리 설정</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#status-badge">Status Badge 추가하기</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-python-lint">Actions 페이지에서 <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Lint</span></code>를 선택합니다.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-status-badge">우측 <code class="docutils literal notranslate"><span class="pre">···</span></code> 버튼을 클릭한 후 <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">status</span> <span class="pre">badge</span></code> 항목을 선택합니다.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-branch-copy-status-badge-markdown"><code class="docutils literal notranslate"><span class="pre">main</span></code> Branch를 선택하고 하단의 Copy status badge Markdown을 클릭해 복사합니다.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readme-md">마지막으로 <code class="docutils literal notranslate"><span class="pre">README.md</span></code>에 복사한 텍스트를 붙여넣습니다.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">설치 및 설정 요약</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-git-hooks"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>을 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hooks</span></code>에 설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code>그룹에 파이썬 패키지 설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black-isort-pyproject-toml"><code class="docutils literal notranslate"><span class="pre">Black</span></code>, <code class="docutils literal notranslate"><span class="pre">isort</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8-tox-ini"><code class="docutils literal notranslate"><span class="pre">Flake8</span></code> 설청 (<code class="docutils literal notranslate"><span class="pre">tox.ini</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-pre-commit-config-yaml"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions-github-workflows-python-lint-yml">GitHub actions 설정 (<code class="docutils literal notranslate"><span class="pre">.github/workflows/python_lint.yml</span></code>)</a></li>
 </ul>
 </li>
 </ul>
@@ -353,20 +351,97 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lint-with-github-actions">
-<h1>Lint with Github Actions<a class="headerlink" href="#lint-with-github-actions" title="Permalink to this heading">#</a></h1>
-<section id="github-workflows-python-lint-yml">
-<h2>아래 설정을 <code class="docutils literal notranslate"><span class="pre">.github/workflows/python_lint.yml</span></code>에 추가<a class="headerlink" href="#github-workflows-python-lint-yml" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">Black</span></code>, <code class="docutils literal notranslate"><span class="pre">isort</span></code>, <code class="docutils literal notranslate"><span class="pre">Flake8</span></code>을 각각 실행시키는 설정입니다.<br />
-<code class="docutils literal notranslate"><span class="pre">actions/setup-python</span></code>을 이용해 파이썬 라이브러리 설치를 캐싱합니다.<br />
-<code class="docutils literal notranslate"><span class="pre">pull_request</span></code> 시에만 동작합니다.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lint">
+<span id="structure-index"></span><h1>Lint<a class="headerlink" href="#lint" title="Permalink to this heading">#</a></h1>
+<p>Black, isort, Flake8을 이용한 Python lint 설정에 대한 내용입니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mac에서 PyCharm을 사용해 개발하며, GitHub를 원격 레포지토리로 사용한다는 가정하에 작성되었습니다.</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="poetry.html">Lint with Poetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pre_commit.html">Lint with Pre-commit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_watchers.html">Lint with PyCharm File Watchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github_actions.html">Lint with Github Actions</a></li>
+</ul>
+</div>
+<section id="id1">
+<h2>설치 및 설정 요약<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="pre-commit">
+<h3><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설치<a class="headerlink" href="#pre-commit" title="Permalink to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>pre-cimmit
+</pre></div>
+</div>
+</section>
+<section id="pre-commit-git-hooks">
+<h3><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>을 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hooks</span></code>에 설치<a class="headerlink" href="#pre-commit-git-hooks" title="Permalink to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pre-commit<span class="w"> </span>install
+</pre></div>
+</div>
+</section>
+<section id="poetry-lint">
+<h3><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code>그룹에 파이썬 패키지 설치<a class="headerlink" href="#poetry-lint" title="Permalink to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>black<span class="w"> </span>isort<span class="w"> </span>flake8<span class="w"> </span>pre-commit<span class="w"> </span>--group<span class="w"> </span>lint
+</pre></div>
+</div>
+</section>
+<section id="black-isort-pyproject-toml">
+<h3><code class="docutils literal notranslate"><span class="pre">Black</span></code>, <code class="docutils literal notranslate"><span class="pre">isort</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>)<a class="headerlink" href="#black-isort-pyproject-toml" title="Permalink to this heading">#</a></h3>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.black]</span>
+<span class="n">line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">120</span>
+
+<span class="k">[tool.isort]</span>
+<span class="n">profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;black&quot;</span>
+<span class="n">filter_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="n">force_single_line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</pre></div>
+</div>
+</section>
+<section id="flake8-tox-ini">
+<h3><code class="docutils literal notranslate"><span class="pre">Flake8</span></code> 설청 (<code class="docutils literal notranslate"><span class="pre">tox.ini</span></code>)<a class="headerlink" href="#flake8-tox-ini" title="Permalink to this heading">#</a></h3>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[flake8]</span>
+<span class="na">max-line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">120</span>
+</pre></div>
+</div>
+</section>
+<section id="pre-commit-pre-commit-config-yaml">
+<h3><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>)<a class="headerlink" href="#pre-commit-pre-commit-config-yaml" title="Permalink to this heading">#</a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">repos</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/ambv/black</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; black version &gt;&gt;</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">black</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/PyCQA/isort</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; isort version &gt;&gt;</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">isort</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/PyCQA/flake8</span>
+<span class="w">    </span><span class="nt">rev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; flake8 version &gt;&gt;</span>
+<span class="w">    </span><span class="nt">hooks</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flake8</span>
+</pre></div>
+</div>
+</section>
+<section id="github-actions-github-workflows-python-lint-yml">
+<h3>GitHub actions 설정 (<code class="docutils literal notranslate"><span class="pre">.github/workflows/python_lint.yml</span></code>)<a class="headerlink" href="#github-actions-github-workflows-python-lint-yml" title="Permalink to this heading">#</a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">Lint&quot;</span>
 
 <span class="nt">on</span><span class="p">:</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">pull_request</span>
+<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.github/workflows/python_lint.yml&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&lt;&lt;</span><span class="nv"> </span><span class="s">python</span><span class="nv"> </span><span class="s">project</span><span class="nv"> </span><span class="s">location</span><span class="nv"> </span><span class="s">&gt;&gt;/**&quot;</span>
+
+<span class="nt">permissions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
 
 <span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; python version &gt;&gt;</span>
+
+<span class="nt">defaults</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">run</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; python project location &gt;&gt;</span>
 
 <span class="nt">jobs</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">Black</span><span class="p">:</span>
@@ -407,66 +482,6 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="contents-read">
-<h2>contents read 권한<a class="headerlink" href="#contents-read" title="Permalink to this heading">#</a></h2>
-<p>명시적으로 contents read 권한만 주고 싶다면 아래의 설정을 추가합니다.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">permissions</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
-</pre></div>
-</div>
-</section>
-<section id="id1">
-<h2>특정 파일 수정 시에만 동작<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">python_lint.yml</span></code> 파일과 파이썬 디렉토리 폴더가 수정된 <code class="docutils literal notranslate"><span class="pre">pull_request</span></code> 시에만 동작하는 설정입니다.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">on</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;.github/workflows/python_lint.yml&quot;</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;&lt;&lt;</span><span class="nv"> </span><span class="s">python</span><span class="nv"> </span><span class="s">project</span><span class="nv"> </span><span class="s">location</span><span class="nv"> </span><span class="s">&gt;&gt;/**&quot;</span>
-</pre></div>
-</div>
-</section>
-<section id="main-push">
-<h2>main 브랜치에 push 했을 때 동작<a class="headerlink" href="#main-push" title="Permalink to this heading">#</a></h2>
-<p>main 브랜치에 push 했을 때 동작하는 설정입니다.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">on</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
-</pre></div>
-</div>
-</section>
-<section id="id2">
-<h2>파이썬 프로젝트 디렉토리 설정<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>파이썬 프로젝트 디렉토리가 레포지토리의 부분집합일 때 사용합니다.<br />
-특히 진부분집합일 때 유용합니다.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">defaults</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">run</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; python project location &gt;&gt;</span>
-</pre></div>
-</div>
-</section>
-<section id="status-badge">
-<h2>Status Badge 추가하기<a class="headerlink" href="#status-badge" title="Permalink to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>main 브랜치에 push 했을 때 GitHub Action이 동작해야 합니다.</p>
-</div>
-<section id="actions-python-lint">
-<h3>Actions 페이지에서 <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Lint</span></code>를 선택합니다.<a class="headerlink" href="#actions-python-lint" title="Permalink to this heading">#</a></h3>
-<p><img alt="select_python_lint_action" src="../../_images/select_python_lint_action.png" /></p>
-</section>
-<section id="create-status-badge">
-<h3>우측 <code class="docutils literal notranslate"><span class="pre">···</span></code> 버튼을 클릭한 후 <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">status</span> <span class="pre">badge</span></code> 항목을 선택합니다.<a class="headerlink" href="#create-status-badge" title="Permalink to this heading">#</a></h3>
-<p><img alt="create_status_badge" src="../../_images/create_status_badge.png" /></p>
-</section>
-<section id="main-branch-copy-status-badge-markdown">
-<h3><code class="docutils literal notranslate"><span class="pre">main</span></code> Branch를 선택하고 하단의 Copy status badge Markdown을 클릭해 복사합니다.<a class="headerlink" href="#main-branch-copy-status-badge-markdown" title="Permalink to this heading">#</a></h3>
-<p><img alt="copy_status_badge_modal" src="../../_images/copy_status_badge_modal.png" /></p>
-</section>
-<section id="readme-md">
-<h3>마지막으로 <code class="docutils literal notranslate"><span class="pre">README.md</span></code>에 복사한 텍스트를 붙여넣습니다.<a class="headerlink" href="#readme-md" title="Permalink to this heading">#</a></h3>
-</section>
 </section>
 </section>
 
@@ -483,7 +498,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./python/lint"
+            path: "./ci_cd/lint"
         },
         predefinedOutput: true
     }
@@ -502,20 +517,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="file_watchers.html"
+       href="../../index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lint with PyCharm File Watchers</p>
+        <p class="prev-next-title">Just for me</p>
       </div>
     </a>
     <a class="right-next"
-       href="../jupyter_book/index.html"
+       href="poetry.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Jupyter Book</p>
+        <p class="prev-next-title">Lint with Poetry</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -537,16 +552,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-workflows-python-lint-yml">아래 설정을 <code class="docutils literal notranslate"><span class="pre">.github/workflows/python_lint.yml</span></code>에 추가</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents-read">contents read 권한</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">특정 파일 수정 시에만 동작</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-push">main 브랜치에 push 했을 때 동작</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">파이썬 프로젝트 디렉토리 설정</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#status-badge">Status Badge 추가하기</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#actions-python-lint">Actions 페이지에서 <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">Lint</span></code>를 선택합니다.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-status-badge">우측 <code class="docutils literal notranslate"><span class="pre">···</span></code> 버튼을 클릭한 후 <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">status</span> <span class="pre">badge</span></code> 항목을 선택합니다.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#main-branch-copy-status-badge-markdown"><code class="docutils literal notranslate"><span class="pre">main</span></code> Branch를 선택하고 하단의 Copy status badge Markdown을 클릭해 복사합니다.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#readme-md">마지막으로 <code class="docutils literal notranslate"><span class="pre">README.md</span></code>에 복사한 텍스트를 붙여넣습니다.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">설치 및 설정 요약</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-git-hooks"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code>을 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">hooks</span></code>에 설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poetry-lint"><code class="docutils literal notranslate"><span class="pre">Poetry</span></code>를 이용해 <code class="docutils literal notranslate"><span class="pre">lint</span></code>그룹에 파이썬 패키지 설치</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#black-isort-pyproject-toml"><code class="docutils literal notranslate"><span class="pre">Black</span></code>, <code class="docutils literal notranslate"><span class="pre">isort</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flake8-tox-ini"><code class="docutils literal notranslate"><span class="pre">Flake8</span></code> 설청 (<code class="docutils literal notranslate"><span class="pre">tox.ini</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-commit-pre-commit-config-yaml"><code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> 설정 (<code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions-github-workflows-python-lint-yml">GitHub actions 설정 (<code class="docutils literal notranslate"><span class="pre">.github/workflows/python_lint.yml</span></code>)</a></li>
 </ul>
 </li>
 </ul>
