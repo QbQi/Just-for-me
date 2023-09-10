@@ -13,3 +13,5 @@
 
 ## 작성 예정
 - GitHub actions를 이용한 간단한 coverage badge 만들기
+- 갑자기 파이참이 느려질 때
+- DRF 에서 TemplateHTMLRenderer 사용시 데이터만 테스트하기
