@@ -91,12 +91,12 @@ defaults:
 main 브랜치에 push 했을 때 GitHub Action이 동작해야 합니다.
 ```
 ### Actions 페이지에서 `Python Lint`를 선택합니다.  
-![select_python_lint_action](/docs/images/ci_cd/lint/select_python_lint_action.png)
+![select_python_lint_action](../../../images/ci_cd/lint/select_python_lint_action.png)
 
 ### 우측 `···` 버튼을 클릭한 후 `Create status badge` 항목을 선택합니다.  
-![create_status_badge](/docs/images/ci_cd/lint/create_status_badge.png)
+![create_status_badge](../../../images/ci_cd/lint/create_status_badge.png)
 
 ### `main` Branch를 선택하고 하단의 Copy status badge Markdown을 클릭해 복사합니다.  
-![copy_status_badge_modal](/docs/images/ci_cd/lint/copy_status_badge_modal.png)
+![copy_status_badge_modal](../../../images/ci_cd/lint/copy_status_badge_modal.png)
 
 ### 마지막으로 `README.md`에 복사한 텍스트를 붙여넣습니다.  
