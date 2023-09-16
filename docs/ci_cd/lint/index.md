@@ -1,5 +1,5 @@
 (structure:index)=
-# Lint
+# Lint(Black, isort, Flake8)
 
 Black, isort, Flake8을 이용한 Python lint 설정에 대한 내용입니다.
 ```{note}
