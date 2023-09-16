@@ -5,20 +5,20 @@ root: index
 parts:
 - caption: CI/CD
   chapters:
-  - file: ci_cd/lint/index
+  - file: docs/ci_cd/lint/index
     sections:
-    - file: ci_cd/lint/poetry
-    - file: ci_cd/lint/pre_commit
-    - file: ci_cd/lint/file_watchers
-    - file: ci_cd/lint/github_actions
-  - file: ci_cd/jupyter_book/index
+    - file: docs/ci_cd/lint/poetry
+    - file: docs/ci_cd/lint/pre_commit
+    - file: docs/ci_cd/lint/file_watchers
+    - file: docs/ci_cd/lint/github_actions
+  - file: docs/ci_cd/jupyter_book/index
 - caption: Python
   chapters:
-  - file: python/packages/index
+  - file: docs/python/packages/index
 - caption: Django
   chapters:
-  - file: django/orm/index
+  - file: docs/django/orm/index
     sections:
-    - file: django/orm/Prefetch
-    - file: django/orm/OuterRef
-    - file: django/orm/FilteredRelation
+    - file: docs/django/orm/Prefetch
+    - file: docs/django/orm/OuterRef
+    - file: docs/django/orm/FilteredRelation
