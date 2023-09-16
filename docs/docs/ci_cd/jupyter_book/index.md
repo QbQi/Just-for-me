@@ -5,7 +5,7 @@ Jupyter Book 문서를 관리하고, 배포하기 위한 새로운 GitHub 저장
 
 ## `Actions` 권한 설정
 ### 상단의 Settings -> Actions -> General 설정에 진입합니다.
-![github_actions_setting](images/ci_cd/jupyter_book/github_actions_setting.png)
+![github_actions_setting](../../../images/ci_cd/jupyter_book/github_actions_setting.png)
 
 ### Workflow permissions를 설정합니다.
 Read and write permissions를 선택합니다.  
